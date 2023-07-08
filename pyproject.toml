@@ -1,0 +1,125 @@
+[tool.poetry]
+name = "mkdocs-minify-html-plugin"
+version = "0.1.0"
+description = "MkDocs plugin for minification using minify-html, an extremely fast HTML + JS + CSS minifier"
+authors = ["monosans <hsyqixco@protonmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/monosans/mkdocs-minify-html-plugin"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python",
+    "Typing :: Typed",
+]
+
+[tool.poetry.plugins."mkdocs.plugins"]
+minify_html = "mkdocs_minify_html_plugin.plugin:MinifyHtmlPlugin"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+minify-html = ">=0.6.8,<0.12"
+mkdocs = "^1.4"
+
+[tool.poetry.group.dev.dependencies]
+black = "23.3.0"
+mypy = "1.4.1"
+pre-commit = "2.21.0"
+ruff = "0.0.277"
+
+[tool.black]
+target-version = ["py37"]
+line-length = 80
+skip-magic-trailing-comma = true
+preview = true
+
+[tool.mypy]
+python_version = "3.7"
+disallow_subclassing_any = false
+disallow_untyped_calls = false
+disallow_untyped_decorators = false
+warn_unreachable = true
+local_partial_types = true
+enable_error_code = [
+    "redundant-self",
+    "redundant-expr",
+    "possibly-undefined",
+    "truthy-bool",
+    "truthy-iterable",
+    "ignore-without-code",
+    "unused-awaitable",
+]
+strict = true
+
+[tool.ruff]
+target-version = "py37"
+line-length = 80
+select = ["ALL"]
+ignore = [
+    "ANN",
+    "BLE001",
+    "C901",
+    "COM",
+    "D100",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    "D203",
+    "D205",
+    "D212",
+    "D213",
+    "D400",
+    "D401",
+    "D407",
+    "D415",
+    "D417",
+    "DJ008",
+    "ERA001",
+    "FBT002",
+    "PD901",
+    "PERF203",
+    "PLR0911",
+    "PLR0912",
+    "PLR0913",
+    "PLR0915",
+    "PT012",
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    "RUF012",
+    "RUF013",
+    "S110",
+    "S112",
+    "S308",
+    "S311",
+    "SIM105",
+    "TCH001",
+    "TCH002",
+    "TCH003",
+    "TID252",
+    "TRY400",
+]
+
+[tool.ruff.flake8-unused-arguments]
+ignore-variadic-names = true
+
+[tool.ruff.isort]
+combine-as-imports = true
+required-imports = ["from __future__ import annotations"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.pyupgrade]
+keep-runtime-typing = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
