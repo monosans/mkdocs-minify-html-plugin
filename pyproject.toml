@@ -17,14 +17,14 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 minify-html = ">=0.6.8,<0.12"
 mkdocs = "^1.4"
 
 [tool.poetry.group.dev.dependencies]
-black = "23.3.0"
+black = "23.7.0"
 mypy = "1.4.1"
-pre-commit = "2.21.0"
+pre-commit = "3.3.3"
 ruff = "0.0.278"
 
 [tool.poetry.plugins."mkdocs.plugins"]
@@ -32,12 +32,12 @@ minify_html = "mkdocs_minify_html_plugin.plugin:MinifyHtmlPlugin"
 
 [tool.black]
 line-length = 80
-target-version = ["py37"]
+target-version = ["py38"]
 skip-magic-trailing-comma = true
 preview = true
 
 [tool.mypy]
-python_version = "3.7"
+python_version = "3.8"
 disallow_subclassing_any = false
 disallow_untyped_calls = false
 disallow_untyped_decorators = false
@@ -106,7 +106,7 @@ ignore = [
 ignore-init-module-imports = true
 line-length = 80
 select = ["ALL"]
-target-version = "py37"
+target-version = "py38"
 
 [tool.ruff.flake8-self]
 ignore-names = []
