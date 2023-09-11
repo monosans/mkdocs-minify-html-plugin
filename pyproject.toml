@@ -22,7 +22,7 @@ minify-html = ">=0.6.8,<0.12"
 mkdocs = "^1.4"
 
 [tool.poetry.group.dev.dependencies]
-black = "23.7.0"
+black = "23.9.1"
 mypy = "1.5.1"
 pre-commit = "3.4.0"
 ruff = "0.0.287"
