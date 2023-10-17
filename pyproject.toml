@@ -25,7 +25,7 @@ mkdocs = "^1.4"
 black = "23.9.1"
 mypy = "1.6.0"
 pre-commit = "3.5.0"
-ruff = "0.0.292"
+ruff = "0.1.0"
 
 [tool.poetry.plugins."mkdocs.plugins"]
 minify_html = "mkdocs_minify_html_plugin.plugin:MinifyHtmlPlugin"
