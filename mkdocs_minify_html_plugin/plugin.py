@@ -9,6 +9,7 @@ from mkdocs.config.base import Config
 from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import BasePlugin
 from mkdocs.structure.pages import Page
+from typing_extensions import override
 
 
 class MinifyHtmlConfig(Config):
@@ -25,21 +26,15 @@ class MinifyHtmlConfig(Config):
 
 
 class MinifyHtmlPlugin(BasePlugin[MinifyHtmlConfig]):
+    @override
     def on_post_page(
-        self,
-        output: str,
-        *,
-        page: Page,  # noqa: ARG002
-        config: MkDocsConfig,  # noqa: ARG002
+        self, output: str, *, page: Page, config: MkDocsConfig
     ) -> Optional[str]:
         return minify(output, **self.config)
 
+    @override
     def on_post_template(
-        self,
-        output_content: str,
-        *,
-        template_name: str,
-        config: MkDocsConfig,  # noqa: ARG002
+        self, output_content: str, *, template_name: str, config: MkDocsConfig
     ) -> Optional[str]:
         if Path(template_name).suffix == ".html":
             return minify(output_content, **self.config)
