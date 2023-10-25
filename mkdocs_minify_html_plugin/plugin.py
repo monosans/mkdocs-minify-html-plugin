@@ -26,7 +26,11 @@ class MinifyHtmlConfig(Config):
 
 class MinifyHtmlPlugin(BasePlugin[MinifyHtmlConfig]):
     def on_post_page(
-        self, output: str, *, page: Page, config: MkDocsConfig  # noqa: ARG002
+        self,
+        output: str,
+        *,
+        page: Page,  # noqa: ARG002
+        config: MkDocsConfig,  # noqa: ARG002
     ) -> Optional[str]:
         return minify(output, **self.config)
 
