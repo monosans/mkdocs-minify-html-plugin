@@ -96,13 +96,13 @@ license = ["ukkonen"]
 
 [[package]]
 name = "importlib-metadata"
-version = "7.0.0"
+version = "7.0.1"
 description = "Read metadata from Python packages"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "importlib_metadata-7.0.0-py3-none-any.whl", hash = "sha256:d97503976bb81f40a193d41ee6570868479c69d5068651eb039c40d850c59d67"},
-    {file = "importlib_metadata-7.0.0.tar.gz", hash = "sha256:7fc841f8b8332803464e5dc1c63a2e59121f46ca186c0e2e182e80bf8c1319f7"},
+    {file = "importlib_metadata-7.0.1-py3-none-any.whl", hash = "sha256:4805911c3a4ec7c3966410053e9ec6a1fecd629117df5adee56dfc9432a1081e"},
+    {file = "importlib_metadata-7.0.1.tar.gz", hash = "sha256:f238736bb06590ae52ac1fab06a3a9ef1d8dce2b7a35b5ab329371d6c8f5d2cc"},
 ]
 
 [package.dependencies]
@@ -230,28 +230,31 @@ files = [
 
 [[package]]
 name = "minify-html"
-version = "0.11.1"
+version = "0.11.2"
 description = "Extremely fast and smart HTML + JS + CSS minifier"
 optional = false
 python-versions = "*"
 files = [
-    {file = "minify_html-0.11.1-cp310-cp310-macosx_10_7_x86_64.whl", hash = "sha256:c29ed4cccaf2a50866a1aeee4243685684f1322f298f115d718641148be040c8"},
-    {file = "minify_html-0.11.1-cp310-cp310-manylinux_2_28_x86_64.whl", hash = "sha256:b2160f2e317420d2be8b9a76872f9beb494c7ac9a1d003a6751787a4788faaeb"},
-    {file = "minify_html-0.11.1-cp310-cp310-manylinux_2_34_aarch64.whl", hash = "sha256:004aca44d8246ea54f9124c41946a7033c70b93344113032cab647040bab8d14"},
-    {file = "minify_html-0.11.1-cp310-none-win_amd64.whl", hash = "sha256:19a203a0b3ae5eb3e0922363418b15e1cf591e0ad803d4205436e34d5b08af6c"},
-    {file = "minify_html-0.11.1-cp311-cp311-macosx_10_7_x86_64.whl", hash = "sha256:ade22a9b8e08da6374613db3d0b7e1e67858bbffb84149f3b8adebdd8c2c6903"},
-    {file = "minify_html-0.11.1-cp311-cp311-manylinux_2_28_x86_64.whl", hash = "sha256:a40ecdbe8044caaf204aaece3649568d2f54f165092e5598e994d0e8cd752de3"},
-    {file = "minify_html-0.11.1-cp311-cp311-manylinux_2_34_aarch64.whl", hash = "sha256:efc8ecf9aa2ca29a76bcd77aa2281166b8e8380e5246318c1412da2cfe9836c5"},
-    {file = "minify_html-0.11.1-cp311-none-win_amd64.whl", hash = "sha256:7d8cae5e228164f9bd20ee6d49b298df0a21b652c7c84c8adccb9139d6e77f0c"},
-    {file = "minify_html-0.11.1-cp38-cp38-macosx_10_7_x86_64.whl", hash = "sha256:d9cb1339ae8847f25a17006415e134d171b2a8ed53b89b02a21309cc1fafbc28"},
-    {file = "minify_html-0.11.1-cp38-cp38-manylinux_2_28_x86_64.whl", hash = "sha256:fb5304dbdc7f6a05bf908455728c1a61305144901a3505f350c30dc364dd3c05"},
-    {file = "minify_html-0.11.1-cp38-cp38-manylinux_2_34_aarch64.whl", hash = "sha256:52fc09e40a845f597468b6c681f9abb14acb83fa33e24ea2749fb5c5481cc20e"},
-    {file = "minify_html-0.11.1-cp38-none-win_amd64.whl", hash = "sha256:acb7b9f2a0cf9d25e5a94e6a5c05c254f66cbfe7d4e0ef75ca6fb656198c1d26"},
-    {file = "minify_html-0.11.1-cp39-cp39-macosx_10_7_x86_64.whl", hash = "sha256:46d2b1058d550136a0fab43f800353841a7c39d9f62beefe9deef7b019f0611f"},
-    {file = "minify_html-0.11.1-cp39-cp39-manylinux_2_28_x86_64.whl", hash = "sha256:6d033759d248416820573c1ab93d0f92579a9ae91373a2615f1d88ff1754429c"},
-    {file = "minify_html-0.11.1-cp39-cp39-manylinux_2_34_aarch64.whl", hash = "sha256:365a662d8ec020af17019ce6cd052de5561c31084ac315f71aa50a85cc08ad74"},
-    {file = "minify_html-0.11.1-cp39-none-win_amd64.whl", hash = "sha256:d82c5f97440abcf2f99cfc0bed6fdaedf4dabeb00bd69e9bce8b29037ef0c8c6"},
-    {file = "minify_html-0.11.1.tar.gz", hash = "sha256:5346566f3ae76c4d9914214bf5b4cacc90a5b0fed8d052aaf066c58d3d4a20b1"},
+    {file = "minify_html-0.11.2-cp310-cp310-macosx_10_12_x86_64.whl", hash = "sha256:7e749a27b8c0b6c43eb783e9261191ff5401e2ebd0992784d9713c38ee1ba34d"},
+    {file = "minify_html-0.11.2-cp310-cp310-manylinux_2_28_x86_64.whl", hash = "sha256:1c01c91f79a91872011391b4d16efbab2b60a31342ee3138812e8bd00c04cb21"},
+    {file = "minify_html-0.11.2-cp310-cp310-manylinux_2_34_aarch64.whl", hash = "sha256:5bef0b70dc96140ac3156dd0bbd9048987e30244c63ce6c19ee26e0668923d21"},
+    {file = "minify_html-0.11.2-cp310-none-win_amd64.whl", hash = "sha256:bef80f688b64edf1b520f390207995ac26ec13ff026d1d133f98ca68fdd0f37c"},
+    {file = "minify_html-0.11.2-cp311-cp311-macosx_10_12_x86_64.whl", hash = "sha256:2f4c126935e050dc8a5ee43ad3fb2ef9824b9a49cc5e297c27dca51a0c6da773"},
+    {file = "minify_html-0.11.2-cp311-cp311-manylinux_2_28_x86_64.whl", hash = "sha256:010f84ddf304274453c8c357205610ac868a12cf098006a7cfd9535a69e6ed68"},
+    {file = "minify_html-0.11.2-cp311-cp311-manylinux_2_34_aarch64.whl", hash = "sha256:5b0ce9b20d91b5b086ed8dc7bf5ae20afa8096e68482b0fa3798c39a471605b8"},
+    {file = "minify_html-0.11.2-cp311-none-win_amd64.whl", hash = "sha256:ce2f2d44ad6722258f60f5777424e96d27a26394989f2b182cdfe742e83de9c8"},
+    {file = "minify_html-0.11.2-cp312-cp312-macosx_10_12_x86_64.whl", hash = "sha256:8a6f6371426786e3e825925768f8f6d1817bca238105f3feff8ec5aa8ed77890"},
+    {file = "minify_html-0.11.2-cp312-cp312-manylinux_2_28_x86_64.whl", hash = "sha256:d30d30f0fbc26fd7723047eb4738d0460011646a2f2273ba4e08ae5a9ee19054"},
+    {file = "minify_html-0.11.2-cp312-cp312-manylinux_2_34_aarch64.whl", hash = "sha256:358d940c8e775b283da3a3a42232c6bf1ece97aef9170125bcc52d6ba310a738"},
+    {file = "minify_html-0.11.2-cp312-none-win_amd64.whl", hash = "sha256:63d11260f407e3249d17e8f18d8c71e7863ce266c43a502351c386459c43c021"},
+    {file = "minify_html-0.11.2-cp38-cp38-macosx_10_12_x86_64.whl", hash = "sha256:b1a1cd19145113254b36e28fe872d9b7ac130a3c2a26f975a38deedf219e791e"},
+    {file = "minify_html-0.11.2-cp38-cp38-manylinux_2_28_x86_64.whl", hash = "sha256:bdedd8688587dc4a332d81c372e956edb75d6d7d5550d5a7bf78bf47375d6b88"},
+    {file = "minify_html-0.11.2-cp38-cp38-manylinux_2_34_aarch64.whl", hash = "sha256:0d102bcc5d542be31e6352dde9df154f8cbb9eedfd4301e5e1d373aeef2ffcd7"},
+    {file = "minify_html-0.11.2-cp38-none-win_amd64.whl", hash = "sha256:18bea563cd502529c3ec5149304899b9e35dc3463d95a30f932b05def3f3a11d"},
+    {file = "minify_html-0.11.2-cp39-cp39-macosx_10_12_x86_64.whl", hash = "sha256:5805f3f76e87cd7e2be75fbf9da3581645169282b5270189fab2d50b7e58e6e1"},
+    {file = "minify_html-0.11.2-cp39-cp39-manylinux_2_28_x86_64.whl", hash = "sha256:a687ce0bf65b0689d4626a34f7063dd18fde73c38f60917e85935da29e73429c"},
+    {file = "minify_html-0.11.2-cp39-cp39-manylinux_2_34_aarch64.whl", hash = "sha256:a25f3b072560cea8541794d628fee069d969da217960ea5612ead0e9c04806fd"},
+    {file = "minify_html-0.11.2-cp39-none-win_amd64.whl", hash = "sha256:86c4bf16f929f030f9b11e88eba3b6680df21d16daa75ea42a17c8f24300aff9"},
 ]
 
 [[package]]
