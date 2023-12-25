@@ -18,7 +18,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-minify-html = ">=0.6.8,<0.12"
+minify-html = ">=0.6.8,<0.16"
 mkdocs = "^1.4"
 typing-extensions = "^4.4"
 
