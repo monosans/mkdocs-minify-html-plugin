@@ -34,6 +34,5 @@ repos:
         args:
           - --scripts-are-modules
         additional_dependencies:
-          - minify-html<0.12
           - mkdocs<2
           - typing-extensions<5

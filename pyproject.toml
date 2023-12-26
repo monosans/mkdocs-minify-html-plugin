@@ -1,36 +1,52 @@
-[tool.poetry]
+[build-system]
+requires = ["maturin>=1,<2"]
+build-backend = "maturin"
+
+[project]
 name = "mkdocs-minify-html-plugin"
-version = "0.1.0"
-description = "MkDocs plugin for minification using minify-html, an extremely fast HTML + JS + CSS minifier"
-license = "MIT"
-authors = ["monosans <hsyqixco@protonmail.com>"]
+description = "MkDocs plugin for minification using minify-html, an extremely fast and smart HTML + JS + CSS minifier"
 readme = "README.md"
-repository = "https://github.com/monosans/mkdocs-minify-html-plugin"
+authors = [{ name = "monosans", email = "hsyqixco@protonmail.com" }]
+requires-python = ">=3.7"
 classifiers = [
+  "Framework :: MkDocs",
   "Intended Audience :: Developers",
   "Intended Audience :: Information Technology",
+  "License :: OSI Approved :: MIT License",
   "Natural Language :: English",
-  "Operating System :: OS Independent",
-  "Programming Language :: Python :: 3 :: Only",
+  "Operating System :: MacOS",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
   "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Programming Language :: Rust",
   "Typing :: Typed",
 ]
+dependencies = ["mkdocs>=1.4,<2", "typing-extensions>=4.4,<5"]
 
-[tool.poetry.dependencies]
-python = "^3.8"
-minify-html = ">=0.6.8,<0.16"
-mkdocs = "^1.4"
-typing-extensions = "^4.4"
+[project.urls]
+Homepage = "https://github.com/monosans/mkdocs-minify-html-plugin"
+Repository = "https://github.com/monosans/mkdocs-minify-html-plugin"
 
-[tool.poetry.group.dev.dependencies]
-mypy = "1.8.0"
-ruff = "0.1.9"
-
-[tool.poetry.plugins."mkdocs.plugins"]
+[project.entry-points."mkdocs.plugins"]
 minify_html = "mkdocs_minify_html_plugin.plugin:MinifyHtmlPlugin"
 
+[tool.maturin]
+python-source = "python"
+module-name = "mkdocs_minify_html_plugin._minify_html"
+features = ["pyo3/extension-module"]
+
 [tool.mypy]
-python_version = "3.8"
+python_version = "3.7"
 platform = "linux"
 disallow_subclassing_any = false
 disallow_untyped_calls = false
@@ -102,7 +118,7 @@ ignore-init-module-imports = true
 line-length = 80
 preview = true
 select = ["ALL"]
-target-version = "py38"
+target-version = "py37"
 
 [tool.ruff.flake8-self]
 ignore-names = []
@@ -124,7 +140,3 @@ convention = "google"
 
 [tool.ruff.pyupgrade]
 keep-runtime-typing = true
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"

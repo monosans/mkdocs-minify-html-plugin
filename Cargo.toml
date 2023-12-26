@@ -1,0 +1,27 @@
+[package]
+name = "mkdocs-minify-html-plugin"
+version = "0.2.0"
+edition = "2021"
+license = "MIT"
+include = [
+  "/python",
+  "/src",
+  "/Cargo.lock",
+  "/Cargo.toml",
+  "/LICENSE",
+  "/pyproject.toml",
+  "/README.md",
+]
+
+[lib]
+name = "_minify_html"
+crate-type = ["cdylib"]
+
+[dependencies]
+minify-html = "=0.15.0"
+pyo3 = "=0.20.0"
+
+[profile.release]
+strip = true
+lto = "fat"
+codegen-units = 1
