@@ -14,19 +14,18 @@ from ._minify_html import minify
 
 
 class MinifyHtmlConfig(Config):
-    allow_noncompliant_unquoted_attribute_values = c.Type(bool, default=False)
-    # allow_optimal_entities = c.Type(bool, default=False)
-    allow_removing_spaces_between_attributes = c.Type(bool, default=False)
+    do_not_minify_doctype = c.Type(bool, default=True)
+    ensure_spec_compliant_unquoted_attribute_values = c.Type(bool, default=True)
     keep_closing_tags = c.Type(bool, default=False)
-    keep_comments = c.Type(bool, default=False)
     keep_html_and_head_opening_tags = c.Type(bool, default=False)
+    keep_spaces_between_attributes = c.Type(bool, default=True)
+    keep_comments = c.Type(bool, default=False)
     keep_input_type_text_attr = c.Type(bool, default=True)
     keep_ssi_comments = c.Type(bool, default=False)
-    minify_css = c.Type(bool, default=True)
-    minify_doctype = c.Type(bool, default=False)
-    minify_js = c.Type(bool, default=True)
     preserve_brace_template_syntax = c.Type(bool, default=False)
     preserve_chevron_percent_template_syntax = c.Type(bool, default=False)
+    minify_css = c.Type(bool, default=True)
+    minify_js = c.Type(bool, default=True)
     remove_bangs = c.Type(bool, default=False)
     remove_processing_instructions = c.Type(bool, default=False)
 

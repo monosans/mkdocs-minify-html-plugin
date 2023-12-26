@@ -21,41 +21,29 @@ plugins:
   - minify_html
 ```
 
-## Default options
+## Options
 
-The default options aim for the best possible minification while maintaining compliance with the specification.
+A description of all options is available in the [minify_html docs](https://docs.rs/minify-html/0.15.0/minify_html/struct.Cfg.html#fields).
+
+The default plugin options are aimed at the best possible minification while maintaining compliance with the specification:
 
 ```yaml
 plugins:
   - search
   - minify_html:
-      # Allow unquoted attribute values in the output to contain characters prohibited by the WHATWG specification (https://html.spec.whatwg.org/multipage/syntax.html#attributes-2). These will still be parsed correctly by almost all browsers.
-      allow_noncompliant_unquoted_attribute_values: false
-      # Allow removing_spaces between attributes when possible, which may not be spec compliant. These will still be parsed correctly by almost all browsers.
-      allow_removing_spaces_between_attributes: false
-      # Do not omit closing tags when possible.
+      do_not_minify_doctype: true
+      ensure_spec_compliant_unquoted_attribute_values: true
       keep_closing_tags: false
-      # Keep all comments.
-      keep_comments: false
-      # Do not omit `<html>` and `<head>` opening tags when they don't have attributes.
       keep_html_and_head_opening_tags: false
-      # Keep `type=text` attribute name and value on `<input>` elements.
+      keep_spaces_between_attributes: true
+      keep_comments: false
       keep_input_type_text_attr: true
-      # Keep SSI comments.
       keep_ssi_comments: false
-      # Minify CSS in `<style>` tags and `style` attributes using lightningcss (https://github.com/parcel-bundler/lightningcss).
-      minify_css: true
-      # Minify DOCTYPEs. Minified DOCTYPEs may not be spec compliant, but will still be parsed correctly by almost all browsers.
-      minify_doctype: false
-      # Minify JavaScript in `<script>` tags using minify-js (https://github.com/wilsonzlin/minify-js).
-      minify_js: true
-      # When `{{`, `{#`, or `{%` are seen in content, all source code until the subsequent matching closing `}}`, `#}`, or `%}` respectively gets piped through untouched.
       preserve_brace_template_syntax: false
-      # When `<%` is seen in content, all source code until the subsequent matching closing `%>` gets piped through untouched.
       preserve_chevron_percent_template_syntax: false
-      # Remove all bangs.
+      minify_css: true
+      minify_js: true
       remove_bangs: false
-      # Remove all processing instructions.
       remove_processing_instructions: false
 ```
 
