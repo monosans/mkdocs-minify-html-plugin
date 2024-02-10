@@ -18,7 +18,7 @@ else:
     from typing_extensions import override
 
 
-class MinifyHtmlConfig(Config):
+class MinifyHtmlConfig(Config):  # type: ignore[no-untyped-call]
     do_not_minify_doctype = c.Type(bool, default=True)
     ensure_spec_compliant_unquoted_attribute_values = c.Type(bool, default=True)
     keep_closing_tags = c.Type(bool, default=False)
@@ -35,7 +35,7 @@ class MinifyHtmlConfig(Config):
     remove_processing_instructions = c.Type(bool, default=False)
 
 
-class MinifyHtmlPlugin(BasePlugin[MinifyHtmlConfig]):
+class MinifyHtmlPlugin(BasePlugin[MinifyHtmlConfig]):  # type: ignore[no-untyped-call]
     @override
     def on_post_page(
         self, output: str, *, page: Page, config: MkDocsConfig
