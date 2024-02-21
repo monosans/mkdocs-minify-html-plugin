@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.2.1] - 2024-02-21
+
+- Unpin dependencies.
+- Don't require typing-extensions on Python >= 3.12.
+
 ## [0.2.0] - 2023-12-26
 
 - Bundle `minify-html` with the plugin to avoid depending on the PyPI package. This version uses `minify-html` v0.15.0.
