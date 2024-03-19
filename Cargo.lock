@@ -58,9 +58,9 @@ checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
 
 [[package]]
 name = "bitflags"
-version = "2.4.2"
+version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ed570934406eb16438a4e976b1b4500774099c13b8cb96eec99f620f05090ddf"
+checksum = "cf4b9d6a944f767f8e5e0db018570623c85f3d925ac718db4e06d0187adb21c1"
 
 [[package]]
 name = "bitvec"
@@ -352,7 +352,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3bd5bed3814fb631bfc1e24c2be6f7e86a9837c660909acab79a38374dcb8798"
 dependencies = [
  "ahash 0.8.11",
- "bitflags 2.4.2",
+ "bitflags 2.5.0",
  "const-str",
  "cssparser",
  "cssparser-color",
@@ -474,7 +474,7 @@ version = "0.26.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "05d74befe2d076330d9a58bf9ca2da424568724ab278adf15fb5718253133887"
 dependencies = [
- "bitflags 2.4.2",
+ "bitflags 2.5.0",
  "cssparser",
  "fxhash",
  "log",
@@ -993,9 +993,9 @@ checksum = "c7de7d73e1754487cb58364ee906a499937a0dfabd86bcb980fa99ec8c8fa2ce"
 
 [[package]]
 name = "uuid"
-version = "1.7.0"
+version = "1.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f00cc9702ca12d3c81455259621e676d0f7251cec66a21e98fe2e9a37db93b2a"
+checksum = "a183cf7feeba97b4dd1c0d46788634f6221d87fa961b305bed08c851829efcc0"
 
 [[package]]
 name = "version_check"
