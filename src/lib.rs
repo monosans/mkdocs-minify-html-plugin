@@ -23,7 +23,7 @@ use pyo3::prelude::*;
     remove_processing_instructions,
 ))]
 fn minify(
-    py: Python,
+    py: Python<'_>,
     code: &str,
     do_not_minify_doctype: bool,
     ensure_spec_compliant_unquoted_attribute_values: bool,
@@ -63,7 +63,7 @@ fn minify(
 }
 
 #[pymodule]
-fn _minify_html(_py: Python, m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn _minify_html(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(minify))?;
     Ok(())
 }
