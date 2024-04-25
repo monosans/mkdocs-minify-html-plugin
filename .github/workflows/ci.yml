@@ -157,7 +157,7 @@ jobs:
           sccache: "true"
       - uses: actions/upload-artifact@v4
         with:
-          name: wheels-macos-${{ matrix.target }}
+          name: wheels-macos-${{ matrix.platform.target }}
           path: dist
   sdist:
     runs-on: ubuntu-latest
