@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.2.2] - 2024-05-18
+
+- Rebuild with updated compiler and dependencies.
+
 ## [0.2.1] - 2024-02-21
 
 - Unpin dependencies.
