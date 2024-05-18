@@ -46,6 +46,6 @@ class MinifyHtmlPlugin(BasePlugin[MinifyHtmlConfig]):  # type: ignore[no-untyped
     def on_post_template(
         self, output_content: str, *, template_name: str, config: MkDocsConfig
     ) -> Optional[str]:
-        if Path(template_name).suffix == ".html":
+        if template_name.endswith(".html"):
             return minify(output_content, **self.config)
         return output_content
