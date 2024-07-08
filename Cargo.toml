@@ -20,7 +20,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 minify-html = "=0.15.0"
-pyo3 = "=0.22.0"
+pyo3 = "=0.22.1"
 
 [profile.release]
 strip = true
