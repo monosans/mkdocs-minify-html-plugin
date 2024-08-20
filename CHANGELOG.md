@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.2.3] - 2024-08-20
+
+- Add Python 3.13 support.
+- Rebuild with updated compiler and dependencies.
+
 ## [0.2.2] - 2024-05-18
 
 - Rebuild with updated compiler and dependencies.
