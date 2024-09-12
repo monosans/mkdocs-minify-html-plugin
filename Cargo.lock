@@ -350,9 +350,9 @@ checksum = "d8adc4bb1803a324070e64a98ae98f38934d91957a99cfb3a43dcbc01bc56439"
 
 [[package]]
 name = "lightningcss"
-version = "1.0.0-alpha.58"
+version = "1.0.0-alpha.59"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ec380ca49dc7f6a1cafbdd2de5e587958eac0f67ab26b1e56727fcc60a0c3d4d"
+checksum = "53e225b3fa0a8bd5562c8833b1a32afa88761c4e661d3177b8cdc4e13cbf078e"
 dependencies = [
  "ahash 0.8.11",
  "bitflags",
@@ -486,9 +486,9 @@ checksum = "7f222829ae9293e33a9f5e9f440c6760a3d450a64affe1846486b140db81c1f4"
 
 [[package]]
 name = "parcel_selectors"
-version = "0.26.6"
+version = "0.27.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "512215cb1d3814e276ace4ec2dbc2cac16726ea3fcac20c22ae1197e16fdd72d"
+checksum = "1f4d26c18a8377a64728c04bf3b2e48ec43b0c77e687a18e03eb837d65e08a14"
 dependencies = [
  "bitflags",
  "cssparser",
@@ -812,9 +812,9 @@ dependencies = [
 
 [[package]]
 name = "redox_syscall"
-version = "0.5.3"
+version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2a908a6e00f1fdd0dfd9c0eb08ce85126f6d8bbda50017e74bc4a4b7d4a926a4"
+checksum = "0884ad60e090bf1345b93da0a5de8923c93884cd03f40dfcfddd3b4bee661853"
 dependencies = [
  "bitflags",
 ]
@@ -991,9 +991,9 @@ checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
 
 [[package]]
 name = "unicode-ident"
-version = "1.0.12"
+version = "1.0.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b"
+checksum = "e91b56cd4cadaeb79bbf1a5645f6b4f8dc5bde8834ad5894a8db35fda9efa1fe"
 
 [[package]]
 name = "unicode-segmentation"
