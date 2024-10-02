@@ -31,10 +31,7 @@ classifiers = [
   "Programming Language :: Rust",
   "Typing :: Typed",
 ]
-dependencies = [
-  "mkdocs>=1.4",
-  "typing-extensions>=4.4; python_version < '3.12'",
-]
+dependencies = ["mkdocs>=1.4", "typing-extensions>=4.4; python_version<'3.12'"]
 urls.repository = "https://github.com/monosans/mkdocs-minify-html-plugin"
 entry-points."mkdocs.plugins".minify_html = "mkdocs_minify_html_plugin.plugin:MinifyHtmlPlugin"
 
