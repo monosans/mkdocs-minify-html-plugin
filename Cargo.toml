@@ -20,7 +20,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 minify-html = "=0.15.0"
-pyo3 = "=0.22.3"
+pyo3 = { version = "=0.22.3", features = ["extension-module"] }
 
 [profile.release]
 strip = true

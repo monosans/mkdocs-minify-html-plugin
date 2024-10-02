@@ -18,7 +18,6 @@ classifiers = [
   "Operating System :: Microsoft :: Windows",
   "Operating System :: POSIX :: Linux",
   "Programming Language :: Python",
-  "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
@@ -36,15 +35,9 @@ dependencies = [
   "mkdocs>=1.4",
   "typing-extensions>=4.4; python_version < '3.12'",
 ]
-
-[project.urls]
-Homepage = "https://github.com/monosans/mkdocs-minify-html-plugin"
-Repository = "https://github.com/monosans/mkdocs-minify-html-plugin"
-
-[project.entry-points."mkdocs.plugins"]
-minify_html = "mkdocs_minify_html_plugin.plugin:MinifyHtmlPlugin"
+urls.repository = "https://github.com/monosans/mkdocs-minify-html-plugin"
+entry-points."mkdocs.plugins".minify_html = "mkdocs_minify_html_plugin.plugin:MinifyHtmlPlugin"
 
 [tool.maturin]
 python-source = "python"
 module-name = "mkdocs_minify_html_plugin._minify_html"
-features = ["pyo3/extension-module"]
