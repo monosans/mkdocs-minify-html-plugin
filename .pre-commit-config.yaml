@@ -35,4 +35,4 @@ repos:
           - --scripts-are-modules
         additional_dependencies:
           - mkdocs
-          - typing-extensions; python_version < "3.12"
+          - typing-extensions; python_version<'3.12'
