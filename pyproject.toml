@@ -35,3 +35,6 @@ entry-points."mkdocs.plugins".minify_html = "mkdocs_minify_html_plugin.plugin:Mi
 [tool.maturin]
 python-source = "python"
 module-name = "mkdocs_minify_html_plugin._minify_html"
+
+[tool.uv]
+dev-dependencies = ["mypy[faster-cache]==1.13", "ruff==0.7"]
