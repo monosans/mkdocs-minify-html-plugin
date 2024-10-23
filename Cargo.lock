@@ -197,7 +197,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "13b588ba4ac1a99f7f2964d24b3d896ddc6bf847ee3855dbd4366f058cfcd331"
 dependencies = [
  "quote",
- "syn 2.0.83",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -611,7 +611,7 @@ dependencies = [
  "phf_shared 0.11.2",
  "proc-macro2",
  "quote",
- "syn 2.0.83",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -729,7 +729,7 @@ dependencies = [
  "proc-macro2",
  "pyo3-macros-backend",
  "quote",
- "syn 2.0.83",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -742,7 +742,7 @@ dependencies = [
  "proc-macro2",
  "pyo3-build-config",
  "quote",
- "syn 2.0.83",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -898,7 +898,7 @@ checksum = "7e85ad2009c50b58e87caa8cd6dac16bdf511bbfb7af6c33df902396aa480fa5"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.83",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -953,9 +953,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.83"
+version = "2.0.85"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "01680f5d178a369f817f43f3d399650272873a8e7588a7872f7e90edc71d60a3"
+checksum = "5023162dfcd14ef8f32034d8bcd4cc5ddc61ef7a247c024a33e24e1f24d21b56"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1122,5 +1122,5 @@ checksum = "fa4f8080344d4671fb4e831a13ad1e68092748387dfc4f55e356242fae12ce3e"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.83",
+ "syn 2.0.85",
 ]
