@@ -35,5 +35,6 @@ repos:
         args:
           - --scripts-are-modules
         additional_dependencies:
+          - orjson
           - mkdocs
           - typing-extensions; python_version<'3.12'
