@@ -38,3 +38,6 @@ dev = ["mypy[faster-cache]==1.13", "ruff==0.7.1"]
 [tool.maturin]
 python-source = "python"
 module-name = "mkdocs_minify_html_plugin._minify_html"
+
+[tool.uv]
+package = false
