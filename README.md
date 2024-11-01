@@ -10,7 +10,7 @@ MkDocs plugin for minification using [minify-html](https://github.com/wilsonzlin
 Install:
 
 ```bash
-python -m pip install -U mkdocs-minify-html-plugin
+pip install -U mkdocs-minify-html-plugin
 ```
 
 Activate in `mkdocs.yml`:
