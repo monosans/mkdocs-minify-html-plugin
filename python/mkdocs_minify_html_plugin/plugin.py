@@ -9,7 +9,7 @@ from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import BasePlugin
 from mkdocs.structure.pages import Page
 
-from ._minify_html import minify
+from mkdocs_minify_html_plugin._minify_html import minify
 
 if sys.version_info >= (3, 12):
     from typing import override
