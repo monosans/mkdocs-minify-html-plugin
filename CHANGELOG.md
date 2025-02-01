@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.2.4] - 2025-02-01
+
+- Build for more platforms and manylinux versions to improve performance on modern systems.
+
 ## [0.2.3] - 2024-08-20
 
 - Add Python 3.13 support.
