@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.2.5] - 2025-02-25
+
+- Add support for PyPy 3.11 and free-threaded CPython 3.13.
+
 ## [0.2.4] - 2025-02-01
 
 - Require Python >= 3.9.
