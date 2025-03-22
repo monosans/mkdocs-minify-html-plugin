@@ -19,7 +19,7 @@ name = "_minify_html"
 crate-type = ["cdylib"]
 
 [dependencies]
-minify-html = "=0.15.0"
+minify-html = "=0.16.4"
 pyo3 = { version = "=0.24.0", features = ["extension-module"] }
 
 [profile.release]
