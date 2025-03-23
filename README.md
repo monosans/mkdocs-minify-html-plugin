@@ -23,7 +23,7 @@ plugins:
 
 ## Options
 
-A description of all options is available in the [minify_html docs](https://docs.rs/minify-html/0.15.0/minify_html/struct.Cfg.html#fields).
+A description of all options is available in the [minify_html docs](https://docs.rs/minify-html/0.16.4/minify_html/struct.Cfg.html#fields).
 
 The default plugin options are aimed at the best possible minification while maintaining compliance with the specification:
 
@@ -31,18 +31,19 @@ The default plugin options are aimed at the best possible minification while mai
 plugins:
   - search
   - minify_html:
-      do_not_minify_doctype: true
-      ensure_spec_compliant_unquoted_attribute_values: true
+      allow_noncompliant_unquoted_attribute_values: false
+      allow_optimal_entities: false
+      allow_removing_spaces_between_attributes: false
       keep_closing_tags: false
-      keep_html_and_head_opening_tags: false
-      keep_spaces_between_attributes: true
       keep_comments: false
+      keep_html_and_head_opening_tags: false
       keep_input_type_text_attr: true
       keep_ssi_comments: false
+      minify_css: true
+      minify_doctype: false
+      minify_js: true
       preserve_brace_template_syntax: false
       preserve_chevron_percent_template_syntax: false
-      minify_css: true
-      minify_js: true
       remove_bangs: false
       remove_processing_instructions: false
 ```
