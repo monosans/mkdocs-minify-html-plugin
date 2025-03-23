@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.3.0] - 2025-03-23
+
+- Bump `minify_html` from v0.15.0 to v0.16.4. Some config options were renamed, see [changelog](https://github.com/wilsonzlin/minify-html/blob/v0.16.4/CHANGELOG.md).
+
 ## [0.2.5] - 2025-02-25
 
 - Add support for PyPy 3.11 and free-threaded CPython 3.13.
