@@ -54,7 +54,7 @@ fn minify(
             keep_ssi_comments,
             minify_css,
             minify_doctype,
-            minify_js,
+            minify_js: false,
             preserve_brace_template_syntax,
             preserve_chevron_percent_template_syntax,
             remove_bangs,
