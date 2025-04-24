@@ -56,8 +56,8 @@ use pyo3::prelude::*;
     remove_bangs,
     remove_processing_instructions,
 ))]
-#[allow(clippy::fn_params_excessive_bools)]
-#[allow(clippy::too_many_arguments)]
+#[expect(clippy::fn_params_excessive_bools)]
+#[expect(clippy::too_many_arguments)]
 fn minify(
     py: Python<'_>,
     code: &str,
@@ -71,7 +71,7 @@ fn minify(
     keep_ssi_comments: bool,
     minify_css: bool,
     minify_doctype: bool,
-    #[allow(unused_variables)] minify_js: bool,
+    #[expect(unused_variables)] minify_js: bool,
     preserve_brace_template_syntax: bool,
     preserve_chevron_percent_template_syntax: bool,
     remove_bangs: bool,
