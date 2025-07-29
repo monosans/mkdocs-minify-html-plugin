@@ -4,7 +4,7 @@ requires = ["maturin>=1,<2"]
 
 [project]
 name = "mkdocs-minify-html-plugin"
-version = "0.3.2"
+version = "0.3.3"
 description = "MkDocs plugin for minification using minify-html, an extremely fast and smart HTML + JS + CSS minifier"
 readme = "README.md"
 authors = [{ name = "monosans", email = "hsyqixco@protonmail.com" }]
