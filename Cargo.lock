@@ -497,7 +497,7 @@ dependencies = [
 
 [[package]]
 name = "mkdocs-minify-html-plugin"
-version = "0.3.1"
+version = "0.3.2"
 dependencies = [
  "minify-html",
  "pyo3",

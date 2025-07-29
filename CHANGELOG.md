@@ -2,6 +2,12 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.3.2] - 2025-07-29
+
+- Add CPython 3.14 and free-threaded CPython 3.14 support.
+- Add riscv64gc-unknown-linux-gnu and loongarch64-unknown-linux-gnu targets support.
+- Don't build x86_64-unknown-linux-gnu and aarch64-unknown-linux-gnu manylinux_2_34 wheels as they are in alpha.
+
 ## [0.3.1] - 2025-03-23
 
 - Don't minify javascript until <https://github.com/wilsonzlin/minify-html/issues/225> is fixed.
