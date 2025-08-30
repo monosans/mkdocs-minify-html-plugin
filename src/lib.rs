@@ -91,7 +91,7 @@ fn minify(
     remove_bangs: bool,
     remove_processing_instructions: bool,
 ) -> String {
-    py.allow_threads(move || {
+    py.detach(move || {
         let cfg = ::minify_html::Cfg {
             allow_noncompliant_unquoted_attribute_values,
             allow_optimal_entities,
