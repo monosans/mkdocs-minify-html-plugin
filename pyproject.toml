@@ -33,7 +33,7 @@ urls.repository = "https://github.com/monosans/mkdocs-minify-html-plugin"
 entry-points."mkdocs.plugins".minify_html = "mkdocs_minify_html_plugin.plugin:MinifyHtmlPlugin"
 
 [dependency-groups]
-dev = ["mypy[faster-cache]==1.17.1", "ruff==0.12.12"]
+dev = ["mypy[faster-cache]==1.17.1", "ruff==0.13.0"]
 
 [tool.maturin]
 python-source = "python"
