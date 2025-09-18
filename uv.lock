@@ -214,7 +214,7 @@ wheels = [
 [[package]]
 name = "mkdocs-minify-html-plugin"
 version = "0.3.4"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "mkdocs" },
     { name = "typing-extensions", marker = "python_full_version < '3.12'" },

@@ -40,4 +40,9 @@ python-source = "python"
 module-name = "mkdocs_minify_html_plugin._minify_html"
 
 [tool.uv]
-package = false
+cache-keys = [
+  { file = "pyproject.toml" },
+  { file = "src/**/*.rs" },
+  { file = "Cargo.toml" },
+  { file = "Cargo.lock" },
+]
