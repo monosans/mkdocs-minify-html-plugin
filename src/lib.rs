@@ -114,7 +114,7 @@ fn minify(
     })
 }
 
-#[pymodule]
+#[pymodule(gil_used = false)]
 fn _minify_html(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(minify))?;
     Ok(())
