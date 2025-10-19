@@ -49,9 +49,9 @@ jobs:
           - target: aarch64-unknown-linux-musl
             runner: ubuntu-24.04
             manylinux: musllinux_1_2
-          - target: arm-unknown-linux-musleabihf
-            runner: ubuntu-24.04
-            manylinux: musllinux_1_2
+          # - target: arm-unknown-linux-musleabihf
+          #   runner: ubuntu-24.04
+          #   manylinux: musllinux_1_2
           - target: armv7-unknown-linux-gnueabihf
             runner: ubuntu-24.04
             manylinux: "2_17"
@@ -139,8 +139,15 @@ jobs:
             runner: windows-11-arm
             setup-python-architecture: arm64
             setup-python-versions: |
+              3.9
+              3.10
+              3.11
+              3.12
+              3.13t
               3.14
-            build-python-versions: "3.14"
+              3.14t
+              pypy3.11
+              3.13
       fail-fast: false
     steps:
       - uses: actions/checkout@v5
