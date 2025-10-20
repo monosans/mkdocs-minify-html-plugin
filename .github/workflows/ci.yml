@@ -141,10 +141,16 @@ jobs:
             setup-python-versions: |
               3.11
               3.12
-              3.13t
               3.14
               3.13
-            build-python-versions: 3.11 3.12 3.13 3.13t 3.14
+            build-python-versions: 3.11 3.12 3.13 3.14
+          - target: aarch64-pc-windows-msvc
+            runner: windows-11-arm
+            setup-python-architecture: arm64
+            setup-python-versions: |
+              3.13t
+              3.14t
+            build-python-versions: 3.13t 3.14t
       fail-fast: false
     steps:
       - uses: actions/checkout@v5
@@ -166,7 +172,7 @@ jobs:
           sccache: ${{ !startsWith(github.ref, 'refs/tags/') }}
       - uses: actions/upload-artifact@v4
         with:
-          name: wheels-${{ matrix.target }}-${{ matrix.manylinux || 'auto' }}
+          name: wheels-${{ matrix.target }}-${{ matrix.manylinux || 'auto' }}-${{ matrix.build-python-versions || '3.9 3.10 3.11 3.12 3.13 3.13t 3.14 3.14t pypy3.11' }}
           path: dist
   check:
     if: ${{ always() && github.event_name == 'pull_request' }}
