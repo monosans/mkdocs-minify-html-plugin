@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.3.6] - 2025-10-21
+
+- Add aarch64-pc-windows-msvc target.
+- Drop support for PyPy 3.9 and PyPy 3.10.
+
 ## [0.3.5] - 2025-10-09
 
 - Add full support for free-threaded Python.
