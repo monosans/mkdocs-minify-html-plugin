@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.3.8] - 2025-10-24
+
+- Fix Python 3.13 and 3.14 builds on Windows.
+
 ## [0.3.7] - 2025-10-24
 
 - Bump `minify-html` from v0.16.4 to v0.17.1. See [changelog](https://github.com/wilsonzlin/minify-html/blob/master/CHANGELOG.md#0171).
