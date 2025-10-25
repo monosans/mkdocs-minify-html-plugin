@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.3.9] - 2025-10-25
+
+- Enable javascript minification (disabled in v0.3.1) as <https://github.com/wilsonzlin/minify-html/issues/225> is fixed.
+
 ## [0.3.8] - 2025-10-24
 
 - Fix Python 3.13 and 3.14 builds on Windows.
