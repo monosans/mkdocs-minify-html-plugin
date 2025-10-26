@@ -573,9 +573,9 @@ dependencies = [
 
 [[package]]
 name = "minify-html"
-version = "0.18.0"
+version = "0.18.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "16eb12bf64f1424394212ef9dc7219c044212d898852d92d2ffed0a1a48fe046"
+checksum = "644c1511457e5f70dcbc03c932d4bd26351eceb8657b119c919dde2e65b6d120"
 dependencies = [
  "ahash 0.8.12",
  "aho-corasick",
