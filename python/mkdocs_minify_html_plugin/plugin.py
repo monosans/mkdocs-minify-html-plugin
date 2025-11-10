@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import sys
-from typing import Optional
 
 from mkdocs.config import config_options as c
 from mkdocs.config.base import Config
@@ -39,13 +38,13 @@ class MinifyHtmlPlugin(BasePlugin[MinifyHtmlConfig]):
     @override
     def on_post_page(
         self, output: str, *, page: Page, config: MkDocsConfig
-    ) -> Optional[str]:
+    ) -> str | None:
         return minify(output, **self.config)
 
     @override
     def on_post_template(
         self, output_content: str, *, template_name: str, config: MkDocsConfig
-    ) -> Optional[str]:
+    ) -> str | None:
         if template_name.endswith(".html"):
             return minify(output_content, **self.config)
         return output_content
