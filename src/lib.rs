@@ -72,8 +72,8 @@ use pyo3::prelude::*;
 ))]
 #[expect(clippy::fn_params_excessive_bools)]
 #[expect(clippy::too_many_arguments)]
-fn minify(
-    py: Python<'_>,
+fn minify<'py>(
+    py: Python<'py>,
     code: &str,
     allow_noncompliant_unquoted_attribute_values: bool,
     allow_optimal_entities: bool,
@@ -90,8 +90,8 @@ fn minify(
     preserve_chevron_percent_template_syntax: bool,
     remove_bangs: bool,
     remove_processing_instructions: bool,
-) -> String {
-    py.detach(move || {
+) -> PyResult<Bound<'py, pyo3::types::PyString>> {
+    let minified = py.detach(move || {
         let cfg = ::minify_html::Cfg {
             allow_noncompliant_unquoted_attribute_values,
             allow_optimal_entities,
@@ -109,9 +109,9 @@ fn minify(
             remove_bangs,
             remove_processing_instructions,
         };
-        let minified = ::minify_html::minify(code.as_bytes(), &cfg);
-        String::from_utf8(minified).unwrap()
-    })
+        ::minify_html::minify(code.as_bytes(), &cfg)
+    });
+    pyo3::types::PyString::from_bytes(py, &minified)
 }
 
 #[pymodule(gil_used = false)]
