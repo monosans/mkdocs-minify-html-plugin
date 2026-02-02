@@ -51,29 +51,30 @@ use pyo3::prelude::*;
 
 #[pymodule]
 mod _minify_html {
+    use pyo3::prelude::*;
+
     #[pyfunction]
     #[pyo3(signature = (
-    code,
-    /,
-    *,
-    allow_noncompliant_unquoted_attribute_values,
-    allow_optimal_entities,
-    allow_removing_spaces_between_attributes,
-    keep_closing_tags,
-    keep_comments,
-    keep_html_and_head_opening_tags,
-    keep_input_type_text_attr,
-    keep_ssi_comments,
-    minify_css,
-    minify_doctype,
-    minify_js,
-    preserve_brace_template_syntax,
-    preserve_chevron_percent_template_syntax,
-    remove_bangs,
-    remove_processing_instructions,
-))]
-    #[expect(clippy::fn_params_excessive_bools)]
-    #[expect(clippy::too_many_arguments)]
+        code,
+        /,
+        *,
+        allow_noncompliant_unquoted_attribute_values,
+        allow_optimal_entities,
+        allow_removing_spaces_between_attributes,
+        keep_closing_tags,
+        keep_comments,
+        keep_html_and_head_opening_tags,
+        keep_input_type_text_attr,
+        keep_ssi_comments,
+        minify_css,
+        minify_doctype,
+        minify_js,
+        preserve_brace_template_syntax,
+        preserve_chevron_percent_template_syntax,
+        remove_bangs,
+        remove_processing_instructions,
+    ))]
+    #[expect(clippy::fn_params_excessive_bools, clippy::too_many_arguments)]
     fn minify<'py>(
         py: Python<'py>,
         code: &str,
