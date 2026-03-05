@@ -28,7 +28,7 @@ entry-points."mkdocs.plugins".minify_html = "mkdocs_minify_html_plugin.plugin:Mi
 dependencies = ["mkdocs>=1.4", "typing-extensions>=4.4; python_version<'3.12'"]
 
 [dependency-groups]
-dev = ["mypy[faster-cache]==1.19.1", "ruff==0.15.4"]
+dev = ["mypy[faster-cache]==1.19.1", "ruff==0.15.5"]
 
 [build-system]
 requires = ["maturin>=1,<2"]
