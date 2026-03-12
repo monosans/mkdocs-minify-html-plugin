@@ -2,6 +2,12 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.3.10] - 2026-03-12
+
+- Drop support for Python 3.9.
+- Add support for riscv64gc-unknown-linux-musl target.
+- Pin mkdocs to <2.
+
 ## [0.3.9] - 2025-10-25
 
 - Enable javascript minification (disabled in v0.3.1) as <https://github.com/wilsonzlin/minify-html/issues/225> is fixed.

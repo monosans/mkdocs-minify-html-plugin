@@ -1,6 +1,6 @@
 [project]
 name = "mkdocs-minify-html-plugin"
-version = "0.3.9"
+version = "0.3.10"
 description = "MkDocs plugin for minification using minify-html, an extremely fast and smart HTML + JS + CSS minifier"
 readme = "README.md"
 requires-python = ">=3.10"
