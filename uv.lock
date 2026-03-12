@@ -290,7 +290,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "mkdocs", specifier = ">=1.4" },
+    { name = "mkdocs", specifier = ">=1.4,<2" },
     { name = "typing-extensions", marker = "python_full_version < '3.12'", specifier = ">=4.4" },
 ]
 
