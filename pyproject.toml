@@ -31,7 +31,7 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["mypy[faster-cache]==1.19.1", "ruff==0.15.7"]
+dev = ["mypy[faster-cache]==1.19.1", "ruff==0.15.8"]
 
 [build-system]
 requires = ["maturin>=1,<2"]
