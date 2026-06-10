@@ -262,9 +262,6 @@ jobs:
     needs:
       - build
       - sdist
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: false
     permissions:
       id-token: write
     steps:
