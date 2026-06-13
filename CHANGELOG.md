@@ -2,6 +2,11 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.3.11] - 2026-06-13
+
+- Add support for PyPy 3.11 on Windows.
+- Drop support for Python 3.13t.
+
 ## [0.3.10] - 2026-03-12
 
 - Drop support for Python 3.9.
