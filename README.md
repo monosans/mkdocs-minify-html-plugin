@@ -1,6 +1,5 @@
 # mkdocs-minify-html-plugin
 
-[![CI](https://github.com/monosans/mkdocs-minify-html-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/monosans/mkdocs-minify-html-plugin/actions/workflows/ci.yml)
 [![Downloads](https://static.pepy.tech/badge/mkdocs-minify-html-plugin)](https://pepy.tech/project/mkdocs-minify-html-plugin)
 
 MkDocs plugin for minification using [minify-html](https://github.com/wilsonzlin/minify-html), an extremely fast and smart HTML + JS + CSS minifier.
