@@ -1,9 +1,9 @@
 [project]
 name = "mkdocs-minify-html-plugin"
-version = "0.3.11"
+version = "0.3.12"
 description = "MkDocs plugin for minification using minify-html, an extremely fast and smart HTML + JS + CSS minifier"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 authors = [{ name = "monosans", email = "hsyqixco@protonmail.com" }]
 classifiers = [
   "Framework :: MkDocs",
@@ -13,7 +13,6 @@ classifiers = [
   "Operating System :: POSIX :: Linux",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
@@ -29,7 +28,7 @@ entry-points."mkdocs.plugins".minify_html = "mkdocs_minify_html_plugin.plugin:Mi
 dependencies = ["mkdocs>=1.4,<2", "typing-extensions>=4.4; python_version<'3.12'"]
 
 [dependency-groups]
-dev = ["mypy==2.3.1", "ruff==0.16.8"]
+dev = ["mypy==2.4.0", "ruff==0.16.10"]
 
 [build-system]
 requires = ["maturin>=1,<2"]
