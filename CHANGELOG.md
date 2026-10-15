@@ -2,8 +2,13 @@
 
 [Semantic Versioning](https://semver.org/)
 
-## [Unreleased]
+## [0.3.13] - 2026-10-15
 
+- Drop support for Python 3.10.
+- Add support for PyPy 3.12 on Windows x86_64.
+- Fix the Windows PyPy wheels being tagged for PyPy 7.3, which PyPy 8 could not install.
+- Drop PyPy wheels for the musllinux, armv7, ppc64, ppc64le, s390x and riscv64 targets.
+- Add riscv64gc-unknown-linux-gnu manylinux_2_39 wheels.
 - Ship the licenses of the bundled third-party code in `LICENSE-THIRD-PARTY`.
 
 ## [0.3.12] - 2026-10-02
