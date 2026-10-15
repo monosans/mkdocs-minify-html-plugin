@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.3.14] - 2026-10-15
+
+- Upload [PEP 740](https://peps.python.org/pep-0740/) attestations to PyPI, so you can verify that the distributions were published from the GitHub Actions workflow of this repository.
+
 ## [0.3.13] - 2026-10-15
 
 - Drop support for Python 3.10.
