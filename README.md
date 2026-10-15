@@ -1,4 +1,4 @@
-# mkdocs-minify-html-plugin
+# <img src="https://raw.githubusercontent.com/monosans/mkdocs-minify-html-plugin/main/assets/logo.svg" alt="" width="40" align="top"> mkdocs-minify-html-plugin
 
 [![Downloads](https://static.pepy.tech/badge/mkdocs-minify-html-plugin)](https://pepy.tech/project/mkdocs-minify-html-plugin)
 
