@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [Unreleased]
+
+- Ship the licenses of the bundled third-party code in `LICENSE-THIRD-PARTY`.
+
 ## [0.3.12] - 2026-10-02
 
 - Add support for Python 3.15 and free-threaded Python 3.15.
