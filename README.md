@@ -2,7 +2,7 @@
 
 [![Downloads](https://static.pepy.tech/badge/mkdocs-minify-html-plugin)](https://pepy.tech/project/mkdocs-minify-html-plugin)
 
-MkDocs plugin for minification using [minify-html](https://github.com/wilsonzlin/minify-html), an extremely fast and smart HTML + JS + CSS minifier.
+MkDocs plugin that minifies the built HTML pages, including inline CSS and JS, with [minify-html](https://github.com/wilsonzlin/minify-html).
 
 ## Usage
 
@@ -22,9 +22,7 @@ plugins:
 
 ## Options
 
-A description of all options is available in the [minify_html docs](https://docs.rs/minify-html/0.16.4/minify_html/struct.Cfg.html#fields).
-
-The default plugin options are aimed at the best possible minification while maintaining compliance with the specification:
+The options are the fields of minify-html's [`Cfg`](https://docs.rs/minify-html/latest/minify_html/struct.Cfg.html#fields). The defaults aim for the smallest output that stays spec-compliant:
 
 ```yaml
 plugins:
