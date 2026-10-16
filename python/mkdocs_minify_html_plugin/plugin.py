@@ -8,7 +8,7 @@ from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import BasePlugin
 from mkdocs.structure.pages import Page
 
-from mkdocs_minify_html_plugin._minify_html import minify
+from mkdocs_minify_html_plugin._minify_html import Minifier
 
 if sys.version_info >= (3, 12):
     from typing import override
@@ -35,16 +35,23 @@ class MinifyHtmlConfig(Config):
 
 
 class MinifyHtmlPlugin(BasePlugin[MinifyHtmlConfig]):
+    _minifier: Minifier
+
+    @override
+    def on_config(self, config: MkDocsConfig) -> MkDocsConfig | None:
+        self._minifier = Minifier(**self.config)
+        return config
+
     @override
     def on_post_page(
         self, output: str, *, page: Page, config: MkDocsConfig
     ) -> str | None:
-        return minify(output, **self.config)
+        return self._minifier.minify(output)
 
     @override
     def on_post_template(
         self, output_content: str, *, template_name: str, config: MkDocsConfig
     ) -> str | None:
         if template_name.endswith(".html"):
-            return minify(output_content, **self.config)
+            return self._minifier.minify(output_content)
         return output_content
