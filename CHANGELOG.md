@@ -2,6 +2,10 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.3.15] - 2026-10-16
+
+- Cut the plugin's overhead per page from 0.85 to 0.55 µs by passing the options to minify-html once per build instead of with every page.
+
 ## [0.3.14] - 2026-10-15
 
 - Upload [PEP 740](https://peps.python.org/pep-0740/) attestations to PyPI, so you can verify that the distributions were published from the GitHub Actions workflow of this repository.
