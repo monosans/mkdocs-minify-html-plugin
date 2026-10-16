@@ -9,6 +9,8 @@ MkDocs plugin that minifies the built HTML pages, including inline CSS and JS, w
 Install:
 
 ```bash
+uv add --dev mkdocs-minify-html-plugin
+# or
 pip install -U mkdocs-minify-html-plugin
 ```
 
