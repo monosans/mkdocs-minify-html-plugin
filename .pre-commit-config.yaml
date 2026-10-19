@@ -44,6 +44,6 @@ repos:
         additional_dependencies:
           - mkdocs==1.6.1
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
-    rev: v1.31.0
+    rev: v1.31.1
     hooks:
       - id: zizmor
