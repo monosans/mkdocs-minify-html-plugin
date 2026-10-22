@@ -39,6 +39,7 @@ repos:
     rev: v2.4.0
     hooks:
       - id: mypy
+        language: python
         args:
           - --scripts-are-modules
         additional_dependencies:
