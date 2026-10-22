@@ -2,6 +2,32 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.3.17] - 2026-10-22
+
+- Add Linux wheels for PyPy 3.11 on PyPy 8. The Linux PyPy 3.11 wheels were built for PyPy 7.3 only, which PyPy 8 cannot install.
+- Drop the `manylinux_2_17` PyPy 3.12 wheels. They were tagged for PyPy 7.3, so no PyPy 3.12 could install them. The `manylinux_2_28` PyPy 3.12 wheels remain.
+
+## [0.3.16] - 2026-10-16
+
+- Publish the wheels for all platforms: 0.3.15 reached PyPI with only some of them.
+
+## [0.3.15] - 2026-10-16
+
+- Cut the plugin's overhead per page from 0.85 to 0.55 µs by passing the options to minify-html once per build instead of with every page.
+
+## [0.3.14] - 2026-10-15
+
+- Upload [PEP 740](https://peps.python.org/pep-0740/) attestations to PyPI, so you can verify that the distributions were published from the GitHub Actions workflow of this repository.
+
+## [0.3.13] - 2026-10-15
+
+- Drop support for Python 3.10.
+- Add support for PyPy 3.12 on Windows x86_64.
+- Fix the Windows PyPy wheels being tagged for PyPy 7.3, which PyPy 8 could not install.
+- Drop PyPy wheels for the musllinux, armv7, ppc64, ppc64le, s390x and riscv64 targets.
+- Add riscv64gc-unknown-linux-gnu manylinux_2_39 wheels.
+- Ship the licenses of the bundled third-party code in `LICENSE-THIRD-PARTY`.
+
 ## [0.3.12] - 2026-10-02
 
 - Add support for Python 3.15 and free-threaded Python 3.15.
