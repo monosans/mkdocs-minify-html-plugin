@@ -4,8 +4,12 @@
 
 ## [Unreleased]
 
+- Add back the `manylinux_2_17` PyPy 3.12 wheels, now tagged for PyPy 8.
+
+## [0.3.17] - 2026-10-22
+
 - Add Linux wheels for PyPy 3.11 on PyPy 8. The Linux PyPy 3.11 wheels were built for PyPy 7.3 only, which PyPy 8 cannot install.
-- Fix the `manylinux_2_17` PyPy 3.12 wheels being tagged for PyPy 7.3, which no PyPy 3.12 could install.
+- Drop the `manylinux_2_17` PyPy 3.12 wheels. They were tagged for PyPy 7.3, so no PyPy 3.12 could install them. The `manylinux_2_28` PyPy 3.12 wheels remain.
 
 ## [0.3.16] - 2026-10-16
 
