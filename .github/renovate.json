@@ -3,7 +3,6 @@
   "branchTopic": "{{{depNameSanitized}}}-{{{newMajor}}}{{#if separateMinorPatch}}{{#if isPatch}}.{{{newMinor}}}{{/if}}{{/if}}{{#if separateMultipleMinor}}{{#if isMinor}}.{{{newMinor}}}{{/if}}{{/if}}.x",
   "configMigration": true,
   "dependencyDashboard": false,
-  "docker-compose": { "enabled": true },
   "extends": [
     "config:recommended",
     ":disableRateLimiting",
@@ -20,6 +19,11 @@
     {
       "matchPackageNames": ["ruff", "charliermarsh/ruff-pre-commit"],
       "groupName": "ruff"
+    },
+    {
+      "description": "Bump the maturin-action pin together with the build-system.requires cap, so a new major does not reach CI alone through automerge",
+      "matchPackageNames": ["maturin"],
+      "groupName": "maturin"
     },
     {
       "matchCurrentVersion": "!/^0/",
@@ -42,10 +46,13 @@
       "rangeStrategy": "update-lockfile"
     },
     { "matchManagers": ["github-actions", "pre-commit"], "automerge": true },
-    { "matchManagers": ["cargo"], "minimumReleaseAge": null }
+    {
+      "description": "Cargo has no cooldown for the transitive dependencies it resolves, so one on the direct dependencies would only delay updates",
+      "matchManagers": ["cargo"],
+      "minimumReleaseAge": null
+    }
   ],
   "pre-commit": { "enabled": true },
   "rollbackPrs": true,
-  "semanticCommits": "enabled",
-  "schedule": ["at any time"]
+  "semanticCommits": "enabled"
 }
