@@ -438,8 +438,11 @@ dependencies = [
 dev = [
     { name = "mypy" },
     { name = "pytest" },
-    { name = "pytest-github-actions-annotate-failures" },
     { name = "ruff" },
+]
+test = [
+    { name = "pytest" },
+    { name = "pytest-github-actions-annotate-failures" },
 ]
 
 [package.metadata]
@@ -452,8 +455,11 @@ requires-dist = [
 dev = [
     { name = "mypy", specifier = "==2.4.0" },
     { name = "pytest", specifier = "==9.1.1" },
-    { name = "pytest-github-actions-annotate-failures", specifier = "==0.4.2" },
     { name = "ruff", specifier = "==0.17.2" },
+]
+test = [
+    { name = "pytest", specifier = "==9.1.1" },
+    { name = "pytest-github-actions-annotate-failures", specifier = "==0.4.2" },
 ]
 
 [[package]]
