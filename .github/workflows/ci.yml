@@ -222,6 +222,7 @@ jobs:
       - pre-commit
       - rustfmt
       - sdist
+      - smoke-test
       - udeps
     runs-on: ubuntu-26.04
     steps:
@@ -343,6 +344,36 @@ jobs:
         with:
           name: wheels-sdist
           path: dist
+  smoke-test:
+    if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+    needs:
+      - build
+    runs-on: ubuntu-26.04
+    steps:
+      # The manylinux 2_17 images have no PyPy 3.12, so maturin builds this
+      # wheel from its bundled sysconfig instead of an interpreter.
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: wheels-x86_64-unknown-linux-gnu-2_17
+          path: dist
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          python-version: pypy3.12
+          enable-cache: false
+      - run: uv venv
+      - run: uv pip install dist/*-pp312-pypy312_pp80-*.whl
+        env:
+          UV_EXCLUDE_NEWER: 3 days
+      - run: |
+          .venv/bin/python - <<'EOF'
+          from mkdocs_minify_html_plugin._minify_html import Minifier
+          from mkdocs_minify_html_plugin.plugin import MinifyHtmlConfig
+
+          config = MinifyHtmlConfig()
+          config.load_dict({})
+          assert config.validate() == ([], [])
+          assert Minifier(**config).minify("<p>  a  </p>") == "<p>a"
+          EOF
   udeps:
     if: ${{ !startsWith(github.ref, 'refs/tags/') }}
     runs-on: ubuntu-26.04
