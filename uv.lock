@@ -442,6 +442,9 @@ dev = [
 ]
 test = [
     { name = "pytest" },
+]
+test-ci = [
+    { name = "pytest" },
     { name = "pytest-github-actions-annotate-failures" },
 ]
 
@@ -457,7 +460,8 @@ dev = [
     { name = "pytest", specifier = "==9.1.1" },
     { name = "ruff", specifier = "==0.17.2" },
 ]
-test = [
+test = [{ name = "pytest", specifier = "==9.1.1" }]
+test-ci = [
     { name = "pytest", specifier = "==9.1.1" },
     { name = "pytest-github-actions-annotate-failures", specifier = "==0.4.2" },
 ]
