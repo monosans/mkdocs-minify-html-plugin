@@ -1,6 +1,6 @@
 [project]
 name = "mkdocs-minify-html-plugin"
-version = "0.3.12"
+version = "0.3.17"
 description = "MkDocs plugin for minification using minify-html, an extremely fast and smart HTML + JS + CSS minifier"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -28,10 +28,10 @@ entry-points."mkdocs.plugins".minify_html = "mkdocs_minify_html_plugin.plugin:Mi
 dependencies = ["mkdocs>=1.4,<2", "typing-extensions>=4.4; python_version<'3.12'"]
 
 [dependency-groups]
-dev = ["mypy==2.4.0", "ruff==0.17.0"]
+dev = ["mypy==2.4.0", "ruff==0.17.2"]
 
 [build-system]
-requires = ["maturin>=1,<2"]
+requires = ["maturin>=1.9.4,<2"]
 build-backend = "maturin"
 
 [tool.maturin]
