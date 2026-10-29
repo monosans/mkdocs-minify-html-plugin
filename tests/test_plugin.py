@@ -10,6 +10,7 @@ from mkdocs_minify_html_plugin._minify_html import Minifier  # noqa: PLC2701
 from mkdocs_minify_html_plugin.plugin import MinifyHtmlConfig
 
 ROOT = Path(__file__).parent.parent
+SITE_URL = "https://example.com/"
 
 PAGE = """\
 # Title
@@ -33,7 +34,10 @@ def _build(site_root: Path, plugins: str) -> Path:
     docs_dir.mkdir(parents=True)
     (docs_dir / "index.md").write_text(PAGE, "utf-8")
     config_file = site_root / "mkdocs.yml"
-    config_file.write_text(f"site_name: Test\nplugins:{plugins}\n", "utf-8")
+    # Without a site_url, MkDocs leaves the sitemap empty.
+    config_file.write_text(
+        f"site_name: Test\nsite_url: {SITE_URL}\nplugins:{plugins}\n", "utf-8"
+    )
     build(load_config(str(config_file)))
     return site_root / "site"
 
@@ -61,6 +65,7 @@ def test_non_html_templates_are_not_minified(tmp_path: Path) -> None:
     plain = _build(tmp_path / "plain", " []")
     minified = _build(tmp_path / "minified", "\n  - minify_html")
     sitemap = (minified / "sitemap.xml").read_text("utf-8")
+    assert f"<loc>{SITE_URL}</loc>" in sitemap
     assert sitemap == (plain / "sitemap.xml").read_text("utf-8")
 
 
