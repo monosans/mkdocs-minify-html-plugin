@@ -312,9 +312,7 @@ jobs:
           enable-cache: true
           prune-cache: true
           save-cache: ${{ github.ref == 'refs/heads/main' }}
-      # pytest does not need mypy, and its ast-serialize dependency has no
-      # PyPy wheels, so it would be built from source.
-      - run: uv sync --no-install-project --no-install-package mypy --no-install-package ast-serialize --locked
+      - run: uv sync --group test-ci --no-group dev --no-install-project --locked
       - run: uv pip install --no-index --find-links dist mkdocs-minify-html-plugin
       - run: uv run --no-sync pytest
   release:
