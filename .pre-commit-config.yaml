@@ -45,6 +45,7 @@ repos:
           - --scripts-are-modules
         additional_dependencies:
           - mkdocs==1.6.1
+          - pytest==9.1.1
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
     rev: c92afdf2c6ca336aaa8f39e2bd8d48f62dbd8e1f # frozen: v1.31.1
     hooks:
