@@ -1,0 +1,104 @@
+name: 🐛 Bug report
+description: >-
+  Report broken pages, build failures or options that have no effect.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        The plugin passes pages to
+        [minify-html](https://github.com/wilsonzlin/minify-html). If the
+        minified HTML itself is wrong, and minify-html gives the same result
+        on its own, report it
+        [there](https://github.com/wilsonzlin/minify-html/issues).
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before you start
+      options:
+        - label: >-
+            I searched the [existing
+            issues](https://github.com/monosans/mkdocs-minify-html-plugin/issues?q=is%3Aissue)
+            and found nothing about this.
+          required: true
+        - label: >-
+            I can reproduce this on the [latest
+            release](https://pypi.org/project/mkdocs-minify-html-plugin/).
+          required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "What happened?"
+      description: What you did, what you expected and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: mkdocs.yml
+      description: "The `theme` and `plugins` sections."
+      placeholder: |-
+        theme:
+          name: mkdocs
+        plugins:
+          - search
+          - minify_html
+      render: yaml
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: HTML before minification
+      description: >-
+        The smallest snippet that shows the problem. Build without the
+        plugin to get it.
+      render: html
+  - type: textarea
+    id: output
+    attributes:
+      label: HTML after minification
+      render: html
+  - type: textarea
+    id: log
+    attributes:
+      label: Build log
+      description: >-
+        The output of `mkdocs build --verbose`, with the full traceback if
+        it failed.
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: mkdocs-minify-html-plugin version
+      description: >-
+        `uv pip show mkdocs-minify-html-plugin` or `pip show
+        mkdocs-minify-html-plugin`
+    validations:
+      required: true
+  - type: input
+    id: mkdocs_version
+    attributes:
+      label: MkDocs version
+      description: "`mkdocs --version`"
+    validations:
+      required: true
+  - type: input
+    id: python_version
+    attributes:
+      label: Python version and implementation
+      description: "`python --version`"
+      placeholder: 3.14.0 (CPython)
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Linux
+        - macOS
+        - Windows
+        - Other
+    validations:
+      required: true

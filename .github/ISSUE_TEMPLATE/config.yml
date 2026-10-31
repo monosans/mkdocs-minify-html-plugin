@@ -1,0 +1,13 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Options
+    url: >-
+      https://github.com/monosans/mkdocs-minify-html-plugin#options
+    about: The plugin options are documented in the README.
+  - name: 🧩 Minification problem in minify-html
+    url: https://github.com/wilsonzlin/minify-html/issues
+    about: If minify-html alone gives the same result, report it there.
+  - name: 🔒 Report a security vulnerability
+    url: >-
+      https://github.com/monosans/mkdocs-minify-html-plugin/security/advisories/new
+    about: Report it privately instead of opening a public issue.
