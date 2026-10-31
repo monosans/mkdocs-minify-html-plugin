@@ -2,7 +2,7 @@
 
 [Semantic Versioning](https://semver.org/)
 
-## [Unreleased]
+## [0.3.18] - 2026-10-31
 
 - Add back the `manylinux_2_17` PyPy 3.12 wheels, now tagged for PyPy 8.
 
