@@ -33,7 +33,7 @@ dev = [
   "ruff==0.17.3",
   { include-group = "test" },
 ]
-test = ["pytest==9.1.1"]
+test = ["pytest==9.2.0"]
 test-ci = [
   "pytest-github-actions-annotate-failures==0.4.2",
   { include-group = "test" },
