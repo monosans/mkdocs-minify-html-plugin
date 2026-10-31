@@ -96,6 +96,11 @@
     },
     { "matchManagers": ["github-actions", "pre-commit"], "automerge": true },
     {
+      "description": "These actions run only on main or at a release, so the CI of a PR does not exercise them",
+      "matchPackageNames": ["astral-sh/attest-action"],
+      "automerge": false
+    },
+    {
       "description": "Cargo has no cooldown for the transitive dependencies it resolves, so one on the direct dependencies would only delay updates",
       "matchManagers": ["cargo"],
       "minimumReleaseAge": null
