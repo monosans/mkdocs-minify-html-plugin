@@ -86,6 +86,8 @@ split-on-trailing-comma = false
 [lint.pydocstyle]
 convention = "google"
 
+[lint.pyupgrade]
+keep-runtime-typing = true
 
 [lint.per-file-ignores]
 "tests/*" = ["FBT001", "S101"]
