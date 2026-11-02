@@ -83,3 +83,78 @@ def test_readme_lists_every_option_with_its_default() -> None:
         for name, value in re.findall(r"^ {6}(\w+): (true|false)$", readme, re.MULTILINE)
     }
     assert documented == dict(_default_config())
+
+
+# Option: (other options turned on, code, minified with the option off, on).
+OPTION_CASES: dict[str, tuple[dict[str, bool], str, str, str]] = {
+    # minify-html applies this one only when allow_optimal_entities is on too.
+    "allow_noncompliant_unquoted_attribute_values": (
+        {"allow_optimal_entities": True},
+        '<a title="a=b">x</a>',
+        '<a title="a=b">x</a>',
+        "<a title=a=b>x</a>",
+    ),
+    "allow_optimal_entities": ({}, "<p>&lt;&amp;x</p>", "<p>&lt;&x", "<p><&x"),
+    "allow_removing_spaces_between_attributes": (
+        {},
+        '<a title="a b" id="c">x</a>',
+        '<a title="a b" id=c>x</a>',
+        '<a title="a b"id=c>x</a>',
+    ),
+    "keep_closing_tags": ({}, "<p>a</p>", "<p>a", "<p>a</p>"),
+    "keep_comments": ({}, "<p>a<!-- b --></p>", "<p>a", "<p>a<!-- b -->"),
+    "keep_html_and_head_opening_tags": (
+        {},
+        "<html><head><title>a</title></head></html>",
+        "<title>a</title>",
+        "<html><head><title>a</title>",
+    ),
+    "keep_input_type_text_attr": ({}, '<input type="text">', "<input>", "<input type=text>"),
+    "keep_ssi_comments": (
+        {},
+        '<p>a<!--#include file="b" --></p>',
+        "<p>a",
+        '<p>a<!--#include file="b" -->',
+    ),
+    "minify_css": (
+        {},
+        "<style>p { color : red ; }</style>",
+        "<style>p { color : red ; }</style>",
+        "<style>p{color:red}</style>",
+    ),
+    "minify_doctype": ({}, "<!DOCTYPE html>", "<!doctype html>", "<!doctypehtml>"),
+    "minify_js": (
+        {},
+        "<script>const  a  =  1 ;</script>",
+        "<script>const  a  =  1 ;</script>",
+        "<script>const a=1;</script>",
+    ),
+    "preserve_brace_template_syntax": ({}, "<p>{{  a  }}</p>", "<p>{{ a }}", "<p>{{  a  }}"),
+    "preserve_chevron_percent_template_syntax": (
+        {},
+        "<p><% a %></p>",
+        "<p>&lt;% a %>",
+        "<p><% a %>",
+    ),
+    "remove_bangs": ({}, "<p>a<!b></p>", "<p>a<!b>", "<p>a"),
+    "remove_processing_instructions": ({}, "<p>a<?b?></p>", "<p>a<?b?>", "<p>a"),
+}
+
+
+# Each option is turned on alone over a base with the others off, so a keyword
+# argument that reached the wrong minify-html field changes the wrong output.
+@pytest.mark.parametrize(
+    ("option", "others", "code", "off", "on"),
+    [(option, *case) for option, case in OPTION_CASES.items()],
+    ids=list(OPTION_CASES),
+)
+def test_each_option_reaches_minify_html(
+    option: str, others: dict[str, bool], code: str, off: str, on: str
+) -> None:
+    options = {**dict.fromkeys(_default_config(), False), **others}
+    assert Minifier(**{**options, option: False}).minify(code) == off
+    assert Minifier(**{**options, option: True}).minify(code) == on
+
+
+def test_option_cases_cover_every_option() -> None:
+    assert OPTION_CASES.keys() == _default_config().keys()
