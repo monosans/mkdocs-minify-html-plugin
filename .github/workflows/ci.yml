@@ -218,6 +218,7 @@ jobs:
     needs:
       - build
       - clippy
+      - coverage
       - licenses
       - pre-commit
       - pytest
@@ -244,6 +245,44 @@ jobs:
           cache: ${{ !startsWith(github.ref, 'refs/tags/') }}
           cache-save-if: ${{ github.ref == 'refs/heads/main' }}
       - run: cargo +beta clippy --all-targets --
+  coverage:
+    if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2
+        with:
+          toolchain: beta
+          components: llvm-tools-preview
+          cache: ${{ !startsWith(github.ref, 'refs/tags/') }}
+          cache-save-if: ${{ github.ref == 'refs/heads/main' }}
+      - uses: taiki-e/install-action@86f7a0ffb25f40114606501a311ebcfaf882ea32 # v2.88.0
+        with:
+          tool: cargo-llvm-cov
+          fallback: none
+      # No cache, so that the instrumented build reaches no other job.
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          python-version: "3.15"
+          enable-cache: false
+      # The plugin imports override from typing_extensions only before Python
+      # 3.12, so the oldest Python runs the tests too, uninstrumented. The Rust
+      # coverage comes from the extension that the tests load on the newest one.
+      - run: |
+          uv sync --python 3.11 --locked
+          uv run --no-sync pytest --cov --cov-fail-under=0 --cov-report=
+          eval "$(cargo +beta llvm-cov show-env --sh)"
+          cargo +beta llvm-cov clean --workspace
+          uv sync --locked --reinstall-package mkdocs-minify-html-plugin
+          uv run --no-sync pytest --cov --cov-append --cov-fail-under=0 --cov-report=
+          uv run --no-sync coverage report
+          cargo +beta llvm-cov report --fail-under-lines 100
+        env:
+          # Faster to build than the release profile, and where cargo llvm-cov
+          # looks for the extension.
+          MATURIN_PEP517_ARGS: --profile dev
   licenses:
     needs:
       - release-guard

@@ -29,7 +29,9 @@ dependencies = ["mkdocs>=1.4,<2", "typing-extensions>=4.4; python_version<'3.12'
 
 [dependency-groups]
 dev = [
+  "covdefaults==2.3.0",
   "mypy==2.4.1",
+  "pytest-cov==7.1.0",
   "ruff==0.17.3",
   { include-group = "test" },
 ]
