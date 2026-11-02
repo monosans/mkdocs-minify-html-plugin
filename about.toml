@@ -39,27 +39,39 @@ accepted = [
 
 [base64-simd.clarify]
 license = "MIT"
-git = [{ path = "LICENSE", checksum = "71674605ec4c087fe9eb534e3e4f9e26eb2e4aabcd76a29fd156c6a844d44b3d" }]
+git = [
+  { path = "LICENSE", checksum = "71674605ec4c087fe9eb534e3e4f9e26eb2e4aabcd76a29fd156c6a844d44b3d" }
+]
 
 [oxc-browserslist.clarify]
 license = "MIT"
-git = [{ path = "LICENSE", checksum = "6fb8065469e053e7193bd6a82616740b2819725fbd12a027aa99534643247cca" }]
+git = [
+  { path = "LICENSE", checksum = "6fb8065469e053e7193bd6a82616740b2819725fbd12a027aa99534643247cca" }
+]
 
 [oxc_index.clarify]
 license = "MIT"
-git = [{ path = "LICENSE", checksum = "95ced5ecf1133fbf41d409b5555c86c344f83f3b019926057ddbc07cfdcc27b3" }]
+git = [
+  { path = "LICENSE", checksum = "95ced5ecf1133fbf41d409b5555c86c344f83f3b019926057ddbc07cfdcc27b3" }
+]
 
 [oxc_sourcemap.clarify]
 license = "MIT"
-git = [{ path = "LICENSE", checksum = "95ced5ecf1133fbf41d409b5555c86c344f83f3b019926057ddbc07cfdcc27b3" }]
+git = [
+  { path = "LICENSE", checksum = "95ced5ecf1133fbf41d409b5555c86c344f83f3b019926057ddbc07cfdcc27b3" }
+]
 
 [simd-abstraction.clarify]
 license = "MIT"
-git = [{ path = "LICENSE", checksum = "71674605ec4c087fe9eb534e3e4f9e26eb2e4aabcd76a29fd156c6a844d44b3d" }]
+git = [
+  { path = "LICENSE", checksum = "71674605ec4c087fe9eb534e3e4f9e26eb2e4aabcd76a29fd156c6a844d44b3d" }
+]
 
 [vsimd.clarify]
 license = "MIT"
-git = [{ path = "LICENSE", checksum = "71674605ec4c087fe9eb534e3e4f9e26eb2e4aabcd76a29fd156c6a844d44b3d" }]
+git = [
+  { path = "LICENSE", checksum = "71674605ec4c087fe9eb534e3e4f9e26eb2e4aabcd76a29fd156c6a844d44b3d" }
+]
 
 # The oxc crates also contain code ported from other projects, whose notices the
 # oxc repository keeps in THIRD-PARTY-LICENSE. It goes under Apache-2.0, the
