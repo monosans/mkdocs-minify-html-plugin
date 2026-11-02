@@ -43,9 +43,7 @@ class MinifyHtmlPlugin(BasePlugin[MinifyHtmlConfig]):
         return config
 
     @override
-    def on_post_page(
-        self, output: str, *, page: Page, config: MkDocsConfig
-    ) -> str | None:
+    def on_post_page(self, output: str, *, page: Page, config: MkDocsConfig) -> str | None:
         return self._minifier.minify(output)
 
     @override

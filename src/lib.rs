@@ -122,8 +122,7 @@ mod _minify_html {
             py: Python<'py>,
             code: &str,
         ) -> PyResult<Bound<'py, pyo3::types::PyString>> {
-            let minified =
-                py.detach(|| ::minify_html::minify(code.as_bytes(), &self.0));
+            let minified = py.detach(|| ::minify_html::minify(code.as_bytes(), &self.0));
             pyo3::types::PyString::from_bytes(py, &minified)
         }
     }
