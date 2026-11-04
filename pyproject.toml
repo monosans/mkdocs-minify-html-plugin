@@ -48,6 +48,12 @@ module-name = "mkdocs_minify_html_plugin._minify_html"
 python-source = "python"
 
 [tool.uv]
+# watchdog 7 has no PyPy wheels for macOS, and its sdist fails to compile
+# there: the bundled pythoncapi_compat.h redefines PyFrame_GetCode and
+# PyInterpreterState_Get, which PyPy 3.12 already declares.
+constraint-dependencies = [
+  "watchdog<7; platform_python_implementation == 'PyPy' and sys_platform == 'darwin'",
+]
 cache-keys = [
   { file = "pyproject.toml" },
   { file = "src/**/*.rs" },
