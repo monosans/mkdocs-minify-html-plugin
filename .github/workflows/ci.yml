@@ -336,8 +336,16 @@ jobs:
           prune-cache: true
           save-cache: ${{ github.ref == 'refs/heads/main' }}
       - run: uv sync --group test-ci --no-group dev --no-install-project --locked
-      - run: uv pip install --no-index --find-links dist mkdocs-minify-html-plugin
-      - run: uv run --no-sync pytest
+      - id: install
+        run: uv pip install --no-index --find-links dist mkdocs-minify-html-plugin
+      - name: pytest (MkDocs)
+        run: uv run --no-sync pytest
+      # The plugin imports mkdocs.*, which ProperDocs maps onto properdocs.*
+      # once this module is imported, as its CLI does on startup.
+      - name: pytest (ProperDocs)
+        # Runs after a MkDocs failure too, so one run shows both results.
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: uv run --no-sync pytest -p properdocs.replacement
   release:
     runs-on: ubuntu-26.04
     if: ${{ github.repository_owner == 'monosans' && startsWith(github.ref, 'refs/tags/') }}

@@ -35,7 +35,10 @@ def _build(site_root: Path, plugins: str) -> Path:
     (docs_dir / "index.md").write_text(PAGE, "utf-8")
     config_file = site_root / "mkdocs.yml"
     # Without a site_url, MkDocs leaves the sitemap empty.
-    config_file.write_text(f"site_name: Test\nsite_url: {SITE_URL}\nplugins:{plugins}\n", "utf-8")
+    # ProperDocs warns when the theme is left to its default.
+    config_file.write_text(
+        f"site_name: Test\nsite_url: {SITE_URL}\ntheme: mkdocs\nplugins:{plugins}\n", "utf-8"
+    )
     build(load_config(str(config_file)))
     return site_root / "site"
 
