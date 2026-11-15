@@ -1,12 +1,28 @@
 [project]
 name = "mkdocs-minify-html-plugin"
 version = "0.3.18"
-description = "ProperDocs and MkDocs plugin for minification using minify-html, an extremely fast and smart HTML + JS + CSS minifier"
+description = "ProperDocs and MkDocs plugin that minifies HTML pages with their inline CSS and JS, using the minify-html Rust crate"
 readme = "README.md"
 requires-python = ">=3.11"
+license = "MIT"
 authors = [{ name = "monosans", email = "hsyqixco@protonmail.com" }]
+keywords = [
+  "css",
+  "html",
+  "html-minifier",
+  "javascript",
+  "minifier",
+  "minify",
+  "minify-html",
+  "mkdocs",
+  "mkdocs-plugin",
+  "properdocs",
+  "properdocs-plugin",
+  "rust",
+]
 classifiers = [
   "Framework :: MkDocs",
+  "Intended Audience :: Developers",
   "Natural Language :: English",
   "Operating System :: MacOS",
   "Operating System :: Microsoft :: Windows",
@@ -18,11 +34,17 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
   "Programming Language :: Python :: 3.15",
+  "Programming Language :: Python :: Free Threading :: 3 - Stable",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
   "Programming Language :: Rust",
+  "Topic :: Documentation",
+  "Topic :: Internet :: WWW/HTTP :: Site Management",
+  "Topic :: Text Processing :: Markup :: HTML",
   "Typing :: Typed",
 ]
+urls.changelog = "https://github.com/monosans/mkdocs-minify-html-plugin/blob/main/CHANGELOG.md"
+urls.issues = "https://github.com/monosans/mkdocs-minify-html-plugin/issues"
 urls.repository = "https://github.com/monosans/mkdocs-minify-html-plugin"
 entry-points."mkdocs.plugins".minify_html = "mkdocs_minify_html_plugin.plugin:MinifyHtmlPlugin"
 dependencies = ["mkdocs>=1.4,<=1.6.1", "typing-extensions>=4.4; python_version<'3.12'"]
