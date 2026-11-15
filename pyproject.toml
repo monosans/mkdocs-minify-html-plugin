@@ -47,7 +47,7 @@ urls.changelog = "https://github.com/monosans/mkdocs-minify-html-plugin/blob/mai
 urls.issues = "https://github.com/monosans/mkdocs-minify-html-plugin/issues"
 urls.repository = "https://github.com/monosans/mkdocs-minify-html-plugin"
 entry-points."mkdocs.plugins".minify_html = "mkdocs_minify_html_plugin.plugin:MinifyHtmlPlugin"
-dependencies = ["mkdocs>=1.4,<=1.6.1", "typing-extensions>=4.4; python_version<'3.12'"]
+dependencies = ["mkdocs>=1.4,<=1.6.1", "typing-extensions>=4.4"]
 
 [dependency-groups]
 dev = [

@@ -440,7 +440,7 @@ version = "0.3.18"
 source = { editable = "." }
 dependencies = [
     { name = "mkdocs" },
-    { name = "typing-extensions", marker = "python_full_version < '3.12'" },
+    { name = "typing-extensions" },
 ]
 
 [package.dev-dependencies]
@@ -466,7 +466,7 @@ test-ci = [
 [package.metadata]
 requires-dist = [
     { name = "mkdocs", specifier = ">=1.4,<=1.6.1" },
-    { name = "typing-extensions", marker = "python_full_version < '3.12'", specifier = ">=4.4" },
+    { name = "typing-extensions", specifier = ">=4.4" },
 ]
 
 [package.metadata.requires-dev]
