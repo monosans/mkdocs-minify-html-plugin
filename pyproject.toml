@@ -1,6 +1,6 @@
 [project]
 name = "mkdocs-minify-html-plugin"
-version = "0.3.18"
+version = "0.3.19"
 description = "ProperDocs and MkDocs plugin that minifies HTML pages with their inline CSS and JS, using the minify-html Rust crate"
 readme = "README.md"
 requires-python = ">=3.11"
