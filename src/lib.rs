@@ -33,7 +33,11 @@ mod _minify_html {
             remove_bangs,
             remove_processing_instructions,
         ))]
-        #[expect(clippy::fn_params_excessive_bools, clippy::too_many_arguments)]
+        #[expect(
+            clippy::fn_params_excessive_bools,
+            clippy::too_many_arguments,
+            reason = "one keyword argument per minify-html option"
+        )]
         const fn new(
             allow_noncompliant_unquoted_attribute_values: bool,
             allow_optimal_entities: bool,
