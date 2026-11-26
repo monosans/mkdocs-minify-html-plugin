@@ -1,4 +1,4 @@
-line-length = 80
+line-length = 100
 output-prefer-rule-codes = true
 preview = true
 target-version = "py311"
@@ -65,6 +65,9 @@ ignore = [
 select = ["ALL"]
 unfixable = ["RUF027", "T"]
 
+[lint.flake8-pytest-style]
+warns-require-match-for = ["*"]
+
 [lint.flake8-self]
 ignore-names = ["_name_", "_value_"]
 
@@ -85,3 +88,6 @@ convention = "google"
 
 [lint.pyupgrade]
 keep-runtime-typing = true
+
+[lint.per-file-ignores]
+"tests/*" = ["FBT001", "S101"]
