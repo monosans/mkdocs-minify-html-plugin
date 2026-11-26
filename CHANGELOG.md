@@ -2,6 +2,15 @@
 
 [Semantic Versioning](https://semver.org/)
 
+## [0.3.19] - 2026-11-15
+
+- Declare the MIT license in the package metadata. The wheels and the sdist had no license field, so PyPI showed none and license checkers reported the plugin as unknown.
+- Describe the package better on PyPI: a clearer summary, keywords, more classifiers and links to the changelog and the issue tracker.
+
+## [0.3.18] - 2026-10-31
+
+- Add back the `manylinux_2_17` PyPy 3.12 wheels, now tagged for PyPy 8.
+
 ## [0.3.17] - 2026-10-22
 
 - Add Linux wheels for PyPy 3.11 on PyPy 8. The Linux PyPy 3.11 wheels were built for PyPy 7.3 only, which PyPy 8 cannot install.

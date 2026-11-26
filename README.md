@@ -2,7 +2,11 @@
 
 [![Downloads](https://static.pepy.tech/badge/mkdocs-minify-html-plugin)](https://pepy.tech/project/mkdocs-minify-html-plugin)
 
-MkDocs plugin that minifies the built HTML pages, including inline CSS and JS, with [minify-html](https://github.com/wilsonzlin/minify-html).
+[ProperDocs](https://properdocs.org/) and MkDocs plugin that minifies the built HTML pages, including inline CSS and JS, with [minify-html](https://github.com/wilsonzlin/minify-html).
+
+## ProperDocs instead of MkDocs
+
+MkDocs is no longer maintained, and its last release, 1.6.1, came out in August 2024. MkDocs 2.0, now in development, has no plugin system, so this plugin will not run on it. [ProperDocs](https://properdocs.org/) continues MkDocs 1.x. It reads `mkdocs.yml` and runs existing plugins without changes, this one included. This plugin still supports MkDocs 1.x as well.
 
 ## Usage
 
@@ -14,7 +18,7 @@ uv add --dev mkdocs-minify-html-plugin
 pip install -U mkdocs-minify-html-plugin
 ```
 
-Activate in `mkdocs.yml`:
+Activate in `properdocs.yml` or `mkdocs.yml`:
 
 ```yaml
 plugins:
